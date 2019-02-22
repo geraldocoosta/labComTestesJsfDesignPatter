@@ -4,57 +4,63 @@ import java.time.LocalDateTime;
 
 public final class Candlestick {
 
-	private final double abertura;
-	private final double fechamento;
-	private final double minimo;
-	private final double maximo;
-	private final double volume;
-	private final LocalDateTime data;
+    private final double abertura;
+    private final double fechamento;
+    private final double minimo;
+    private final double maximo;
+    private final double volume;
+    private final LocalDateTime data;
 
-	public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume,
-			LocalDateTime data) {
-		if (minimo > maximo) {
-			throw new IllegalArgumentException("O valor minimo não pode ser maior que o valor maximo");
-		}
-
-		this.abertura = abertura;
-		this.fechamento = fechamento;
-		this.minimo = minimo;
-		this.maximo = maximo;
-		this.volume = volume;
-		this.data = data;
+    public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume,
+	    LocalDateTime data) {
+	if (minimo > maximo) {
+	    throw new IllegalArgumentException("O valor minimo não pode ser maior que o valor maximo");
 	}
 
-	public double getAbertura() {
-		return abertura;
-	}
+	this.abertura = abertura;
+	this.fechamento = fechamento;
+	this.minimo = minimo;
+	this.maximo = maximo;
+	this.volume = volume;
+	this.data = data;
+    }
 
-	public double getFechamento() {
-		return fechamento;
-	}
+    public double getAbertura() {
+	return abertura;
+    }
 
-	public double getMinimo() {
-		return minimo;
-	}
+    public double getFechamento() {
+	return fechamento;
+    }
 
-	public double getMaximo() {
-		return maximo;
-	}
+    public double getMinimo() {
+	return minimo;
+    }
 
-	public double getVolume() {
-		return volume;
-	}
+    public double getMaximo() {
+	return maximo;
+    }
 
-	public LocalDateTime getData() {
-		return data;
-	}
+    public double getVolume() {
+	return volume;
+    }
 
-	public boolean isAlta() {
-		return this.abertura <= this.fechamento;
-	}
+    public LocalDateTime getData() {
+	return data;
+    }
 
-	public boolean isBaixa() {
-		return this.abertura > this.fechamento;
-	}
+    public boolean isAlta() {
+	return this.abertura <= this.fechamento;
+    }
+
+    public boolean isBaixa() {
+	return this.abertura > this.fechamento;
+    }
+
+    @Override
+    public String toString() {
+	return "Candlestick [abertura=" + abertura + ", fechamento=" + fechamento + ", minimo=" + minimo + ", maximo="
+		+ maximo + ", volume=" + volume + ", data=" + data + "]";
+    }
 
 }
