@@ -1,5 +1,6 @@
 package br.com.ultcode.argentum.reader;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayInputStream;
