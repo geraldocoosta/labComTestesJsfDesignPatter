@@ -79,15 +79,15 @@ class CandlestickFactoryTest {
 	CandlestickFactory fabrica = new CandlestickFactory();
 
 	List<Candlestick> candles = fabrica.constroiCandles(negociacoes);
-//
-//	assertEquals(negociacao7.getPreco(), candles.get(0).getAbertura(), 0.0001);
-//	assertEquals(negociacao8.getPreco(), candles.get(0).getFechamento(), 0.0001);
-//
-//	assertEquals(negociacao5.getPreco(), candles.get(1).getAbertura(), 0.0001);
-//	assertEquals(negociacao6.getPreco(), candles.get(1).getFechamento(), 0.0001);
-//
-//	assertEquals(negociacao1.getPreco(), candles.get(2).getAbertura(), 0.0001);
-//	assertEquals(negociacao4.getPreco(), candles.get(2).getFechamento(), 0.0001);
+	
+	assertEquals(negociacao5.getPreco(), candles.get(0).getAbertura(), 0.0001);
+	assertEquals(negociacao6.getPreco(), candles.get(0).getFechamento(), 0.0001);
+
+	assertEquals(negociacao1.getPreco(), candles.get(1).getAbertura(), 0.0001);
+	assertEquals(negociacao4.getPreco(), candles.get(1).getFechamento(), 0.0001);
+
+	assertEquals(negociacao7.getPreco(), candles.get(2).getAbertura(), 0.0001);
+	assertEquals(negociacao8.getPreco(), candles.get(2).getFechamento(), 0.0001);
     }
 
 }

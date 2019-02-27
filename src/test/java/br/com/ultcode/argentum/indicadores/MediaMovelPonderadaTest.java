@@ -13,7 +13,7 @@ class MediaMovelPonderadaTest {
 
 	SerieTemporal serieTemporal = UtilGeraSeriesTemporais.retornaSerieTemporal(1, 2, 3, 4, 5, 6);
 
-	MediaMovelPonderada mmp = new MediaMovelPonderada();
+	MediaMovel mmp = new MediaMovelPonderada();
 	assertEquals(14.0 / 6, mmp.calcula(serieTemporal, 2), 0.00001);
 	assertEquals(20.0 / 6, mmp.calcula(serieTemporal, 3), 0.00001);
 	assertEquals(26.0 / 6, mmp.calcula(serieTemporal, 4), 0.00001);

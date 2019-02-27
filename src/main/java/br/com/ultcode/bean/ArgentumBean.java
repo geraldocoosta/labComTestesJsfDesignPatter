@@ -20,16 +20,22 @@ import br.com.ultcode.argentum.ws.ClientWebService;
 public class ArgentumBean implements Serializable {
 
     private static final long serialVersionUID = -7555060192228793349L;
-    private List<Negociacao> negociacoes;
+    private final List<Negociacao> negociacoes;
     private LineChartModel modeloGrafico;
+    private String mediaMovel;
+    private String indicador;
 
     public ArgentumBean() {
 	negociacoes = new ClientWebService().getNegociacoes();
+	geraGrafico();
+    }
+
+    public void geraGrafico() {
 	List<Candlestick> candles = new CandlestickFactory().constroiCandles(negociacoes);
 	SerieTemporal serie = new SerieTemporal(candles);
-	
+
 	GeradorDeModeloGrafico geradorGrafico = new GeradorDeModeloGrafico(serie, 2, serie.getUltimaPosicao());
-	geradorGrafico.plotaMediaMovelSimples();
+	geradorGrafico.plotaMediaMovelSimples(mediaMovel,indicador);
 	modeloGrafico = geradorGrafico.getModeloGrafico();
     }
 
@@ -40,4 +46,21 @@ public class ArgentumBean implements Serializable {
     public List<Negociacao> getNegociacoes() {
 	return negociacoes;
     }
+
+    public String getMediaMovel() {
+	return mediaMovel;
+    }
+
+    public void setMediaMovel(String mediaMovel) {
+	this.mediaMovel = mediaMovel;
+    }
+
+    public String getIndicador() {
+	return indicador;
+    }
+
+    public void setIndicador(String indicador) {
+	this.indicador = indicador;
+    }
+
 }
