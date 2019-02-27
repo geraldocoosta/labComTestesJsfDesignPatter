@@ -5,10 +5,6 @@
 	<groupId>Argentum</groupId>
 	<artifactId>Argentum</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<properties>
-		<junit-jupiter.version>5.2.0</junit-jupiter.version>
-		<junit-platform.version>1.2.0</junit-platform.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
@@ -30,20 +26,9 @@
 			<artifactId>primefaces</artifactId>
 			<version>6.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit-jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-launcher</artifactId>
-			<version>${junit-platform.version}</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 	<build>
+		<testSourceDirectory>src/main/test</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
